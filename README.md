@@ -1,24 +1,15 @@
-# README
+# Fattrack - weight tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Yes I know the name is terrible.
 
-Things you may want to cover:
+Anyway, this is a barebones webapp that just gives you a text box to enter a
+daily weight, and store it. It can only record one value per day.
 
-* Ruby version
+This is a quick personal tool I wrote to help me track my progress on my New
+Year's resolution.
 
-* System dependencies
+## Running
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+It's a Rails app, so any general guide to deploying Rails apps will work.  I
+intend to run it behind an Apache instance, to provide basic HTTP auth
+protection.
