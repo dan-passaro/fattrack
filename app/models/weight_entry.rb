@@ -1,0 +1,9 @@
+class WeightEntry < ApplicationRecord
+  def self.from(day)
+    find_by(day: day)
+  end
+
+  def to_s
+    "#{value} lbs"
+  end
+end

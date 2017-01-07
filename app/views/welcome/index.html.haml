@@ -1,2 +1,11 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+.row
+  .col-md-4.col-md-offset-4
+    %h1 Your weight for today:
+    - if @todays_weight.nil?
+      = form_for@weight_entry do |f|
+        %p
+          = f.text_field :value
+        %p
+          = f.submit "Save"
+    - else
+      %h3.text-center= @todays_weight
