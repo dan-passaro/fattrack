@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20170107191700) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "weight_entries", force: :cascade do |t|
     t.integer  "value"
     t.date     "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["day"], name: "index_weight_entries_on_day"
+    t.index ["day"], name: "index_weight_entries_on_day", using: :btree
   end
 
 end
