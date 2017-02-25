@@ -1,11 +1,15 @@
 .row
-  .text-center.col-md-6.col-md-offset-3
+  .text-center.col-xs-12.col-md-6.col-md-offset-3
     %h1 Your weight for today:
+
     - if @todays_weight.nil?
-      = form_for@weight_entry do |f|
-        %p
-          = f.text_field :value, class: 'form-control'
-        %p
-          = f.submit "Save", class: 'btn btn-primary'
+      = form_for @weight_entry do |f|
+        .text-center.col-xs-12.col-md-6.col-md-offset-3
+          %p
+            = f.text_field :value, class: 'form-control'
+        .text-center.col-xs-12.col-md-6.col-md-offset-3
+          %p
+            = f.submit "Save", class: 'btn btn-primary'
     - else
-      %h2= @todays_weight
+      .text-center.col-xs-12.col-md-6.col-md-offset-3
+        %h2= @todays_weight
