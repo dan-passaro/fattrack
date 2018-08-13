@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180809002718) do
+ActiveRecord::Schema.define(version: 20180813123631) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,7 +34,9 @@ ActiveRecord::Schema.define(version: 20180809002718) do
     t.date     "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
     t.index ["day"], name: "index_weight_entries_on_day"
+    t.index ["user_id"], name: "index_weight_entries_on_user_id"
   end
 
 end
