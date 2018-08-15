@@ -1,5 +1,10 @@
-%table
-  - @entries.each do |entry|
+%table.table
+  %thead
     %tr
-      %td= entry.day ? day_in_words(entry.day) : "No date"
-      %td= entry
+      %th Day
+      %th Weight
+  %tbody
+    - @entries.each do |entry|
+      %tr.weight_entry
+        %td= entry.day ? day_in_words(entry.day) : "No date"
+        %td= entry

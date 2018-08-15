@@ -26,7 +26,7 @@ class WeightEntriesControllerTest < ActionDispatch::IntegrationTest
 
       get weight_entries_url
 
-      rows = css_select "table tr"
+      rows = css_select ".weight_entry"
       row = ->(n) { css_select(rows[n], 'td').map(&:text) }
       assert_equal ['Today', '124 lbs'], row[0]
       assert_equal ['Yesterday', '125 lbs'], row[1]
@@ -44,6 +44,6 @@ class WeightEntriesControllerTest < ActionDispatch::IntegrationTest
 
     get weight_entries_url
 
-    assert_select 'table tr', 3
+    assert_select '.weight_entry', 3
   end
 end
