@@ -8,7 +8,7 @@ class WeightEntriesController < ApplicationController
   end
 
   def index
-    @entries = WeightEntry.all
+    @entries = WeightEntry.where(user: current_user).order(day: :desc)
   end
 
   private
