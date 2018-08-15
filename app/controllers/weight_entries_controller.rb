@@ -7,6 +7,10 @@ class WeightEntriesController < ApplicationController
     redirect_to root_path
   end
 
+  def index
+    @entries = WeightEntry.all
+  end
+
   private
 
   def weight_entry_params

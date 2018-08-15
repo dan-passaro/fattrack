@@ -59,8 +59,10 @@ gem 'browser-timezone-rails'
 
 ruby File.open(File.dirname(__FILE__) + "/.ruby-version", &:read)
 
-# Added at 2018-08-08 09:01:43 -0400 by leo:
 gem "sqlite3", "~> 1.3"
 
-# Added at 2018-08-08 20:18:24 -0400 by leo:
 gem "devise", "~> 4.4"
+
+gem "minitest", "5.10.3"
+
+gem "timecop", "~> 0.9.1"

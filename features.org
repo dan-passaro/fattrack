@@ -1,0 +1,109 @@
+* Fattrack Features
+
+Just a doc to track some potential features.
+
+** Overall guidelines
+
+*** Be friendly
+
+*** Don't judge
+
+*** Don't bias against overweight people
+
+The most typical type of 'fitness bias' - these are users you want and
+being judgemental is going to alienate them for no reason.
+
+*** Be simple and easy to understand
+
+The UI should be straightforward.  You should be able to do whatever
+you want in as few clicks or taps as possible.
+
+** Specific feature ideas
+
+*** Warn when entering weight at different times of day
+
+If users weigh themselves at different times of the day, their
+readings can vary dramatically.  If the app notices their time of day
+is inconsistent, it should suggest they try to make it more stable,
+and also advise them to weigh themselves in the morning, to get the
+best results.
+
+*** Email gentle reminders if they stop entering weight
+
+The most important thing about weight entry is it needs to be regular.
+Everyone can have their own definition of what regular is, but if they
+exceed their standard deviation by some significant amount, email them
+and be like, "Hey man, don't forget to put in your weight!!  That way
+you can... know... your weight!!  ... OVER TIME!"
+
+*** Integrate with digital scales
+
+How sick would it be if you just hopped on the scale and it recorded
+your weight?  BOOM.  Fuckin' great.
+
+*** Encourage at certain milestones
+
+If they're trying to gain 20 pounds and they've gained five,
+congratulate them.  Break their goal up into manageable chunks so they
+feel motivated the entire time.  Encourage them to cheat EVERY ONCE IN
+A WHILE.
+
+*** Ask for their goal weight OR height and gender and suggest one
+
+Note that this should make it clear this app is not their doctor and
+they should check with their doctor.  And if their doctor is alarmed
+by the advice in the app... to please email me his objections and I
+will give him five bucks.
+
+*** Graph their weight over time if they're doing well
+
+If they're approaching their goal, showing them their progress over a
+month or two should be a great reinforcement that they're on the right
+track.
+
+*** Suggest easy calorie heavy or light recipes
+
+Yeah I dunno.  Fuck it.  What else is this app gonna do?
+
+*** Exercise tracker?
+
+Maybe suggest they can put in their exercise routine too, if they
+want?  Track their weight and reps or time and incline and speed on
+the treadmill?  I dunno.
+
+*** Fun graphics or something?  I dunno
+
+Maybe gamifying entry could pay off, such as linking to funny meme
+videos or some dumb shit, I dunno.  I would love it if an app rewarded
+me for paying attention to my weight by being at least vaguely
+entertaining, but this is probably the worst feature idea yet.
+
+But hey worst case scenario it's a nerd-oriented weight app.  Stupid
+but better than nothing, right?  And perfect for people like me!
+
+*** Suggest local gyms or weight management groups
+
+See if the user (with their permission) has any cool fitness related
+bullshit nearby they can go to to feel like part of a group.  People
+are social animals, you know?
+
+Also probably throw away their location info after it's needed.
+
+*** Offer to anonymously share with nearby users
+
+If the user opts in to offering their location, show others around
+with similar weight loss goals, but without showing pictures or
+anything, so douchebags can't message you and be like "HEY WOW LOST 1
+POUND GOOD JOB LOLOL."
+
+I don't have a great vision for how this would play out.  Something
+like Miiverse I guess.  Instead of offering real people the chance to
+be shitty, just make everyone seem nice and friendly.
+
+And hide people who are excelling particularly well... because they're
+either gaming the system or probably assholes.  I know that sounds
+harsh but if you're making steady progress your own way you don't
+wanna see someone burning through to their goal, because comparing
+yourself to others blows.  It should show people with very close
+progress levels, so you can at least feel proud of your less obnoxious
+neighbors.

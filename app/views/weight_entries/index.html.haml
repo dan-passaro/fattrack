@@ -1,0 +1,5 @@
+%table
+  - @entries.each do |entry|
+    %tr
+      %td= entry.day ? day_in_words(entry.day) : "No date"
+      %td= entry
