@@ -66,3 +66,9 @@ gem "devise", "~> 4.4"
 gem "minitest", "5.10.3"
 
 gem "timecop", "~> 0.9.1"
+
+# Added at 2018-08-24 18:45:18 -0400 by leo:
+gem "sidekiq", "~> 5.2"
+
+# Added at 2018-08-24 18:45:48 -0400 by leo:
+gem "foreman", "~> 0.64.0"

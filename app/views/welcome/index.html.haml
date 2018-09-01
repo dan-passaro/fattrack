@@ -12,7 +12,10 @@
             = f.submit "Save", class: 'btn btn-primary'
     - else
       .text-center.col-xs-12.col-md-6.col-md-offset-3
-        %h2.h3= @todays_weight
+        %h2.h3
+          #{@todays_weight}
+          %a{href: "#"}
+            %span.glyphicon.glyphicon-pencil
 
     %p.text-center.col-xs-12.col-md-6.col-md-offset-3
       #{link_to 'See old entries', weight_entries_path}

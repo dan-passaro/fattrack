@@ -107,3 +107,27 @@ wanna see someone burning through to their goal, because comparing
 yourself to others blows.  It should show people with very close
 progress levels, so you can at least feel proud of your less obnoxious
 neighbors.
+*** Suggest daily calorie amount
+
+    Probably not the best feature, but if I'm out of other features...
+
+    Also a feature I personally want.
+
+    Just use the user's height, weight and gender and run it through
+    some scientific table and suggest calorie amounts that would help
+    them towards their goal.
+
+    Make sure it doesn't suggest more than 2lbs weight change per
+    week, as that's really unhealthy and unsustainable.
+
+    Also probably tell them their maintenance amount just so they know
+    their 'real' budget.  E.g. "You can eat up to 2643 calories per
+    day, but for your goals, try and hit 21443 per day!"
+
+    Suggestions for a 5'11" 29 year old male at 268lbs looking to lose
+    weight (i.e. ME!)
+*** Progress pics
+
+    Ask for a photo periodically, and then show those photos again
+    later after they've made some progress (or even if they haven't
+    just to show after X months they've been maintaining).
