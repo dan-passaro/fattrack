@@ -72,3 +72,6 @@ gem "sidekiq", "~> 5.2"
 
 # Added at 2018-08-24 18:45:48 -0400 by leo:
 gem "foreman", "~> 0.64.0"
+
+# Added at 2018-09-01 12:53:38 -0500 by leo:
+gem "webpacker", "~> 3.5"

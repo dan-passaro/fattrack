@@ -21,4 +21,8 @@
 .byebug_history
 
 # Bundler files
-vendor/bundle
+vendor/bundle/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity
