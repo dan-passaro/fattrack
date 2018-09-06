@@ -59,7 +59,7 @@
 
    mounted () {
      axios
-       .get("/weight_entries/today.json")
+       .get("/weight_entries/today")
        .then(resp => {
          this.entry = resp.data || {}
        })
@@ -68,9 +68,8 @@
    methods: {
      update () {
        axios
-         .put("/weight_entries/today.json", this.entry)
+         .put("/weight_entries/today", this.entry)
          .then(resp => {
-           console.log('Got a response:', resp)
            this.entry = resp.data || {}
            this.editing = false
          })
