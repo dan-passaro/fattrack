@@ -4,7 +4,7 @@
       <h2 class="h3">Your weight for today:</h2>
 
       <div
-        v-if="!entry.created_at || editing"
+        v-if="isEditing"
         key="enter-value"
       >
         <form @submit="update">
@@ -54,6 +54,12 @@
      return {
        entry: {},
        editing: false,
+     }
+   },
+
+   computed: {
+     isEditing () {
+       return !this.entry.value || this.editing
      }
    },
 
