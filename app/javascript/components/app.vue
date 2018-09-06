@@ -4,27 +4,30 @@
       <h2 class="h3">Your weight for today:</h2>
 
       <div
-        v-if="!entry.created"
+        v-if="!entry.created_at"
         key="enter-value"
       >
-        <div class="text-center col-xs-12 col-md-6 col-md-offset-3">
-          <p>
-            <input
-              class="form-control"
-              v-model="entry.value"
-            >
-          </p>
-        </div>
+        <form @submit="update">
+          <div class="text-center col-xs-12 col-md-6 col-md-offset-3">
+            <p>
+              <input
+                class="form-control"
+                name="fizz"
+                v-model="entry.value"
+              >
+            </p>
+          </div>
 
-        <div class="text-center col-xs-12 col-md-6 col-md-offset-3">
-          <p>
-            <input
-              class="btn btn-primary"
-              value="Submit"
-              @click="update()"
-            >
-          </p>
-        </div>
+          <div class="text-center col-xs-12 col-md-6 col-md-offset-3">
+            <p>
+              <input
+                @click="update"
+                class="btn btn-primary"
+                value="Submit"
+              >
+            </p>
+          </div>
+        </form>
       </div>
 
       <div
