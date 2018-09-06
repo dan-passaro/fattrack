@@ -9,6 +9,16 @@ class WeightEntriesController < ApplicationController
 
   def index
     @entries = WeightEntry.where(user: current_user).order(day: :desc)
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @entries }
+    end
+  end
+
+  def today
+    @todays_weight = WeightEntry.find_by(day: Date.current, user: current_user)
+    render json: @todays_weight
   end
 
   private

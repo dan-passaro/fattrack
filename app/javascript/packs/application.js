@@ -14,12 +14,4 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.appendChild(document.createElement('app'))
   const app = new Vue(App)
   app.$mount('#app-container')
-  // const app = new Vue({
-  //   el: 'app',
-  //   template: '<App/>',
-  //   components: { App }
-  // })
-
-  console.log('App class:', App)
-  console.log(app)
 })
