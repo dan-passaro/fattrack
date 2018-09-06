@@ -4,7 +4,7 @@
       <h2 class="h3">Your weight for today:</h2>
 
       <div
-        v-if="!entry.created_at"
+        v-if="!entry.created_at || editing"
         key="enter-value"
       >
         <form @submit="update">
@@ -32,9 +32,15 @@
 
       <div
         v-else
+        class="text-center col-xs-12 col-md-6 col-md-offset-3"
         key="show-value"
       >
-        <p>{{ entry.value }}</p>
+        <h2 class="h3">
+          {{ entry.value }} lbs
+          <a href="#" @click="editEntryBegin">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
+        </h2>
       </div>
     </div>
   </div>
@@ -46,7 +52,8 @@
  export default {
    data () {
      return {
-       entry: {}
+       entry: {},
+       editing: false,
      }
    },
 
@@ -65,7 +72,12 @@
          .then(resp => {
            console.log('Got a response:', resp)
            this.entry = resp.data || {}
+           this.editing = false
          })
+     },
+
+     editEntryBegin () {
+       this.editing = true
      }
    }
  }
