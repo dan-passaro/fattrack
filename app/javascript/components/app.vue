@@ -4,10 +4,10 @@
       <h2 class="h3">Your weight for today:</h2>
 
       <div
-        v-if="isEditing"
+        v-if="editing"
         key="enter-value"
       >
-        <form @submit="update">
+        <form @submit.prevent="update">
           <div class="text-center col-xs-12 col-md-6 col-md-offset-3">
             <p>
               <input
@@ -21,7 +21,7 @@
           <div class="text-center col-xs-12 col-md-6 col-md-offset-3">
             <p>
               <input
-                @click="update"
+                type="submit"
                 class="btn btn-primary"
                 value="Submit"
               >
@@ -57,17 +57,14 @@
      }
    },
 
-   computed: {
-     isEditing () {
-       return !this.entry.value || this.editing
-     }
-   },
-
    mounted () {
      axios
        .get("/weight_entries/today")
        .then(resp => {
          this.entry = resp.data || {}
+         if (!this.entry.value) {
+           this.editing = true
+         }
        })
    },
 
