@@ -1,12 +1,4 @@
 %p= link_to 'Back', root_path
 
-%table.table
-  %thead
-    %tr
-      %th Day
-      %th Weight
-  %tbody
-    - @entries.each do |entry|
-      %tr.weight_entry
-        %td= entry.day ? day_in_words(entry.day) : "No date"
-        %td= entry
+#app-container
+  %p This shouldn't be used

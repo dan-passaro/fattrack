@@ -13,7 +13,6 @@
               <p>
                 <input
                   class="form-control"
-                  name="fizz"
                   v-model="entry.value"
                 >
               </p>
@@ -45,7 +44,8 @@
         </div>
       </div>
     </div>
-    <p><a href="/weight_entries">See old entries</a></p>
+    <p><router-link to="/weight-entries">See old entries</router-link></p>
+    <!-- <p><a href="/weight_entries">See old entries</a></p> -->
   </div>
 </template>
 
