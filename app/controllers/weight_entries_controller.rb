@@ -32,6 +32,11 @@ class WeightEntriesController < ApplicationController
     end
   end
 
+  def destroy
+    @entry.destroy
+    head :no_content
+  end
+
   def today
     @todays_weight = WeightEntry.find_by(day: Date.current, user: current_user)
     render json: @todays_weight

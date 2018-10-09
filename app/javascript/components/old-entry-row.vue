@@ -11,10 +11,10 @@
       <span v-else key="show-value">
         {{ entry.value }} lbs
         <span class="show-on-hover">
-          <a href="#" @click.prevent="editEntry(entry)">
+          <a href="#" @click.prevent="editEntry">
             <span class="glyphicon glyphicon-pencil"></span>
           </a>
-          <a href="#" @click.prevent="deleteEntry(entry)">
+          <a href="#" @click.prevent="deleteEntry">
             <span class="glyphicon glyphicon-remove"></span>
           </a>
         </span>
@@ -44,17 +44,20 @@
 
      deleteEntry(entry) {
        console.log('Deleting: ', entry)
+       axios
+              .delete("/weight_entries/" + this.entry.id)
+              .then(() => console.log('Deleted'))
      },
 
      update () {
        axios
-              .put("/weight_entries/" + this.entry.id, this.entry)
-              .then(resp => {
-                console.log('Update complete')
-              })
-              .catch(err => {
-                console.log('Got an error: ', err)
-              })
+         .put("/weight_entries/" + this.entry.id, this.entry)
+         .then(resp => {
+           console.log('Update complete')
+         })
+         .catch(err => {
+           console.log('Got an error: ', err)
+         })
        this.editing = false
      }
    },
