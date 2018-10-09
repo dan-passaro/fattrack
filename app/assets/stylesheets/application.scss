@@ -1,2 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.show-on-hover-container .show-on-hover {
+    visibility: hidden;
+}
+
+.show-on-hover-container:hover .show-on-hover {
+    visibility: visible;
+}

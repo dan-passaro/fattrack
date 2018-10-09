@@ -1,3 +1,10 @@
+<style scoped>
+ table {
+     background-color: blue;
+     bgcolor: blue;
+ }
+</style>
+
 <template>
   <div>
     <p><router-link to="/">Back</router-link></p>
@@ -10,9 +17,19 @@
       </thead>
 
       <tbody>
-        <tr v-for="entry in entries" class="weight-entry">
-          <td>{{ entry.day ? entry.day : 'No date' | humanize }}</td>
-          <td>{{ entry.value }} lbs</td>
+        <tr v-for="entry in entries" class="weight-entry show-on-hover-container">
+          <td :title="entry.day">{{ entry.day ? entry.day : 'No date' | humanize }}</td>
+          <td>
+            {{ entry.value }} lbs
+            <span class="show-on-hover">
+              <a href="#" @click.prevent="editEntry(entry)">
+                <span class="glyphicon glyphicon-pencil"></span>
+              </a>
+              <a href="#" @click.prevent="deleteEntry(entry)">
+                <span class="glyphicon glyphicon-remove"></span>
+              </a>
+            </span>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -30,6 +47,16 @@
      }
    },
 
+   methods: {
+     editEntry(entry) {
+       console.log('Editing: ', entry)
+     },
+
+     deleteEntry(entry) {
+       console.log('Deleting: ', entry)
+     },
+   },
+
    mounted () {
      axios
        .get("/weight_entries.json")
@@ -45,10 +72,3 @@
    },
  }
 </script>
-
-<style scoped>
- p {
-     font-size: 2em;
-     text-align: center;
- }
-</style>
