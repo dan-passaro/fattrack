@@ -24,14 +24,22 @@ class WeightEntriesControllerTest < ActionDispatch::IntegrationTest
       WeightEntry.create(user: user, value: 125, day: 1.days.ago)
       sign_in user
 
-      get weight_entries_url
+      get "#{weight_entries_url}.json"
 
-      rows = css_select ".weight_entry"
-      row = ->(n) { css_select(rows[n], 'td').map(&:text) }
-      assert_equal ['Today', '124 lbs'], row[0]
-      assert_equal ['Yesterday', '125 lbs'], row[1]
-      assert_equal ['Sunday', '126 lbs'], row[2]
-      assert_equal ['Saturday', '127 lbs'], row[3]
+      json = JSON.parse(response.body)
+
+      assert_equal [
+        {"created_at" => "2018-08-14T04:00:00.000Z", "value" => "124"},
+        {"created_at" => "2018-08-13T04:00:00.000Z", "value" => "125"},
+        {"created_at" => "2018-08-12T04:00:00.000Z", "value" => "126"},
+        {"created_at" => "2018-08-11T04:00:00.000Z", "value" => "127"},
+      ], json
+      # rows = css_select ".weight_entry"
+      # row = ->(n) { css_select(rows[n], 'td').map(&:text) }
+      # assert_equal ['Today', '124 lbs'], row[0]
+      # assert_equal ['Yesterday', '125 lbs'], row[1]
+      # assert_equal ['Sunday', '126 lbs'], row[2]
+      # assert_equal ['Saturday', '127 lbs'], row[3]
     end
   end
 

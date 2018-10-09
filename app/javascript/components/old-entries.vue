@@ -17,20 +17,7 @@
       </thead>
 
       <tbody>
-        <tr v-for="entry in entries" class="weight-entry show-on-hover-container">
-          <td :title="entry.day">{{ entry.day ? entry.day : 'No date' | humanize }}</td>
-          <td>
-            {{ entry.value }} lbs
-            <span class="show-on-hover">
-              <a href="#" @click.prevent="editEntry(entry)">
-                <span class="glyphicon glyphicon-pencil"></span>
-              </a>
-              <a href="#" @click.prevent="deleteEntry(entry)">
-                <span class="glyphicon glyphicon-remove"></span>
-              </a>
-            </span>
-          </td>
-        </tr>
+        <old-entry-row v-for="entry in entries" :entry="entry"/>
       </tbody>
     </table>
   </div>
@@ -38,23 +25,18 @@
 
 <script>
  import axios from 'axios'
- import moment from 'moment'
+
+ import OldEntryRow from './old-entry-row.vue'
 
  export default {
+   components: {
+     OldEntryRow,
+   },
+
    data () {
      return {
        entries: [],
      }
-   },
-
-   methods: {
-     editEntry(entry) {
-       console.log('Editing: ', entry)
-     },
-
-     deleteEntry(entry) {
-       console.log('Deleting: ', entry)
-     },
    },
 
    mounted () {
@@ -65,10 +47,5 @@
        })
    },
 
-   filters: {
-     humanize: (dateStr) => {
-       return moment(dateStr).fromNow()
-     }
-   },
  }
 </script>

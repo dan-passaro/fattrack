@@ -1,4 +1,8 @@
 class WeightEntriesController < ApplicationController
+  before_action :authenticate_user!
+  skip_before_filter :verify_authenticity_token
+  before_action :set_entry, only: [:show, :edit, :update, :destroy]
+
   def create
     @entry = WeightEntry.new(weight_entry_params)
     @entry.user = current_user
@@ -7,12 +11,24 @@ class WeightEntriesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    render json: @entry
+  end
+
   def index
     @entries = WeightEntry.where(user: current_user).order(day: :desc)
 
     respond_to do |format|
       format.html
       format.json { render json: @entries }
+    end
+  end
+
+  def update
+    if @entry.update(weight_entry_params)
+      render json: @entry, status: :ok, location: @entry
+    else
+      render json: @entry.errors, status: :unprocessable_entity
     end
   end
 
@@ -25,5 +41,9 @@ class WeightEntriesController < ApplicationController
 
   def weight_entry_params
     params.require(:weight_entry).permit(:value)
+  end
+
+  def set_entry
+    @entry = WeightEntry.find_by(id: params[:id], user: current_user)
   end
 end
