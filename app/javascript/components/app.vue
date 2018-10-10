@@ -71,7 +71,7 @@
          if (this.entry.value) {
            this.originalValue = this.entry.value
          } else {
-           this.editing = true
+           this.editEntryBegin()
          }
        })
    },
