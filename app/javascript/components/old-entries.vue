@@ -17,7 +17,7 @@
       </thead>
 
       <tbody>
-        <old-entry-row v-for="entry in entries" :entry="entry"/>
+        <old-entry-row v-for="entry in entries" key="entry.id" :entry="entry"/>
       </tbody>
     </table>
   </div>
