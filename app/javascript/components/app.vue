@@ -13,7 +13,9 @@
               <p>
                 <input
                   class="form-control"
+                  ref="input"
                   v-model="entry.value"
+                  @blur="cancelEdit"
                 >
               </p>
             </div>
@@ -57,6 +59,7 @@
      return {
        entry: {},
        editing: false,
+       originalValue: null,
      }
    },
 
@@ -65,7 +68,9 @@
        .get("/weight_entries/today")
        .then(resp => {
          this.entry = resp.data || {}
-         if (!this.entry.value) {
+         if (this.entry.value) {
+           this.originalValue = this.entry.value
+         } else {
            this.editing = true
          }
        })
@@ -78,11 +83,24 @@
          .then(resp => {
            this.entry = resp.data || {}
            this.editing = false
+           this.originalValue = this.entry.value
          })
+     },
+
+     cancelEdit () {
+
+       // Can't cancel if there's no entry for today.
+       if (!this.originalValue) {
+         return
+       }
+
+       this.editing = false
+       this.entry.value = this.originalValue
      },
 
      editEntryBegin () {
        this.editing = true
+       this.$nextTick(() => this.$refs.input.focus())
      }
    }
  }
