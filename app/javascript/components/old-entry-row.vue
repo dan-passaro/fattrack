@@ -10,7 +10,7 @@
             @blur="stopEditing"
             class="form-control"
           >
-          <button class="btn btn-primary">Ayy</button>
+          <button class="btn btn-primary">Save</button>
         </form>
       </span>
       <span v-else key="show-value">
@@ -49,10 +49,7 @@
    methods: {
      editEntry(entry) {
        this.editing = true
-       console.log(this.$refs)
-       this.$nextTick(() => {
-         this.$refs.input.focus()
-       })
+       this.$nextTick(() => this.$refs.input.focus())
      },
 
      deleteEntry(entry) {
@@ -62,9 +59,6 @@
      update () {
        axios
          .put("/weight_entries/" + this.entry.id, this.entry)
-         .then(resp => {
-           console.log('Update complete')
-         })
          .catch(err => {
            console.log('Got an error: ', err)
          })
