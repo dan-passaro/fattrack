@@ -17,7 +17,11 @@
       </thead>
 
       <tbody>
-        <old-entry-row v-for="entry in entries" key="entry.id" :entry="entry"/>
+        <old-entry-row
+          v-for="entry in entries"
+          :entry="entry"
+          @on-delete="onDelete"
+        />
       </tbody>
     </table>
   </div>
@@ -37,6 +41,23 @@
      return {
        entries: [],
      }
+   },
+
+   methods: {
+     onDelete (entry) {
+       axios
+         .delete("/weight_entries/" + entry.id)
+         .then(() => {
+           let i = this.entries.indexOf(entry)
+           if (i >= 0) {
+             this.entries.splice(i, 1)
+           } else {
+
+             // This should never happen
+             console.log('Deleted entry not found...?')
+           }
+         })
+     },
    },
 
    mounted () {

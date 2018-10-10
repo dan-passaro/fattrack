@@ -38,15 +38,11 @@
 
    methods: {
      editEntry(entry) {
-       console.log('Editing: ', entry)
        this.editing = true
      },
 
      deleteEntry(entry) {
-       console.log('Deleting: ', entry)
-       axios
-              .delete("/weight_entries/" + this.entry.id)
-              .then(() => console.log('Deleted'))
+       this.$emit('on-delete', this.entry)
      },
 
      update () {
