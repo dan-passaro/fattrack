@@ -4,7 +4,12 @@
     <td>
       <span v-if="editing" key="edit-value">
         <form @submit.prevent="update">
-          <input class="form-control" v-model="entry.value">
+          <input
+            ref="input"
+            v-model="entry.value"
+            @blur="stopEditing"
+            class="form-control"
+          >
           <button class="btn btn-primary">Ayy</button>
         </form>
       </span>
@@ -33,12 +38,21 @@
    data () {
      return {
        editing: false,
+       originalValue: null,
      }
+   },
+
+   mounted () {
+     this.originalValue = this.entry.value
    },
 
    methods: {
      editEntry(entry) {
        this.editing = true
+       console.log(this.$refs)
+       this.$nextTick(() => {
+         this.$refs.input.focus()
+       })
      },
 
      deleteEntry(entry) {
@@ -54,8 +68,14 @@
          .catch(err => {
            console.log('Got an error: ', err)
          })
+       this.originalValue = this.entry.value
        this.editing = false
-     }
+     },
+
+     stopEditing () {
+       this.editing = false
+       this.entry.value = this.originalValue
+     },
    },
 
    filters: {
