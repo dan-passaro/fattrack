@@ -3,14 +3,19 @@
     <td :title="entry.day">{{ entry.day ? entry.day : 'No date' | humanize }}</td>
     <td>
       <span v-if="editing" key="edit-value">
-        <form @submit.prevent="update">
-          <input
-            ref="input"
-            v-model="entry.value"
-            @blur="stopEditing"
-            class="form-control"
-          >
-          <button class="btn btn-primary">Save</button>
+        <form
+          @submit.prevent="update"
+          class="form-inline"
+        >
+          <div class="col-xs-4">
+            <input
+              ref="input"
+              v-model="entry.value"
+              @blur="stopEditing"
+              class="form-control"
+            >
+          </div>
+          <button class="btn btn-primary col">Save</button>
         </form>
       </span>
       <span v-else key="show-value">
