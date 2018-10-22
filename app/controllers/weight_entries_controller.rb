@@ -1,6 +1,6 @@
 class WeightEntriesController < ApplicationController
   before_action :authenticate_user!
-  skip_before_filter :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
   def create
@@ -20,7 +20,7 @@ class WeightEntriesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: @entries }
+      format.json { paginate json: @entries, per_page: 14 }
     end
   end
 

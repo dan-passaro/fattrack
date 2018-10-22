@@ -79,7 +79,12 @@
 
    filters: {
      humanize: (dateStr) => {
-       return moment(dateStr).fromNow()
+       return moment(dateStr).calendar(null, {
+         sameDay: '[Today]',
+         lastDay: '[Yesterday]',
+         lastWeek: 'dddd',
+         sameElse: 'MMM[.] Do',
+       })
      }
    },
  }

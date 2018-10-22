@@ -38,6 +38,7 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    api-pagination (4.8.1)
     arel (7.1.4)
     autoprefixer-rails (9.1.0)
       execjs
@@ -104,6 +105,18 @@ GEM
       railties (>= 3.1)
     jstz-rails3-plus (1.0.5)
       railties (>= 3.1)
+    kaminari (1.1.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.1.1)
+      kaminari-activerecord (= 1.1.1)
+      kaminari-core (= 1.1.1)
+    kaminari-actionview (1.1.1)
+      actionview
+      kaminari-core (= 1.1.1)
+    kaminari-activerecord (1.1.1)
+      activerecord
+      kaminari-core (= 1.1.1)
+    kaminari-core (1.1.1)
     libv8 (3.16.14.19)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -228,6 +241,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  api-pagination (~> 4.8)
   bootstrap-sass
   browser-timezone-rails
   byebug
@@ -237,6 +251,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
+  kaminari (~> 1.1)
   listen (~> 3.0.5)
   minitest (= 5.10.3)
   pg

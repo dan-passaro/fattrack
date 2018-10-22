@@ -75,3 +75,9 @@ gem "foreman", "~> 0.64.0"
 
 # Added at 2018-09-01 12:53:38 -0500 by leo:
 gem "webpacker", "~> 3.5"
+
+# Added at 2018-10-22 07:17:06 -0400 by leo:
+gem "kaminari", "~> 1.1"
+
+# Added at 2018-10-22 07:42:30 -0400 by leo:
+gem "api-pagination", "~> 4.8"

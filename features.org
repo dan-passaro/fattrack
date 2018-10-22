@@ -18,6 +18,40 @@ being judgemental is going to alienate them for no reason.
 The UI should be straightforward.  You should be able to do whatever
 you want in as few clicks or taps as possible.
 
+
+** Ready to implement
+
+   Ideas here are considered good and should be done soon.
+
+*** TODO Limit old entries page to 14 entries, add pagination
+
+    Right now the old entries thing shows as many entries as possible,
+    which is going to get worse and worse the more someone uses the
+    app.
+
+    Show up to 14 (two weeks), and allow user to view older if they
+    like.
+
+    Ultimately this should be a not frequently used screen as the app
+    should be displaying historical data in different, more helpful
+    ways.
+
+*** TODO Login with Facebook/Gmail
+
+    Logging in should be easy to do via:
+
+    - Creating an account directly
+    - Google auth
+    - Facebook
+
+*** TODO Email gentle reminders if they stop entering weight
+
+The most important thing about weight entry is it needs to be regular.
+Everyone can have their own definition of what regular is, but if they
+exceed their standard deviation by some significant amount, email them
+and be like, "Hey man, don't forget to put in your weight!!  That way
+you can... know... your weight!!  ... OVER TIME!"
+
 ** Specific feature ideas
 
 *** Warn when entering weight at different times of day
@@ -27,14 +61,6 @@ readings can vary dramatically.  If the app notices their time of day
 is inconsistent, it should suggest they try to make it more stable,
 and also advise them to weigh themselves in the morning, to get the
 best results.
-
-*** Email gentle reminders if they stop entering weight
-
-The most important thing about weight entry is it needs to be regular.
-Everyone can have their own definition of what regular is, but if they
-exceed their standard deviation by some significant amount, email them
-and be like, "Hey man, don't forget to put in your weight!!  That way
-you can... know... your weight!!  ... OVER TIME!"
 
 *** Integrate with digital scales
 
