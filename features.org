@@ -18,7 +18,19 @@ being judgemental is going to alienate them for no reason.
 The UI should be straightforward.  You should be able to do whatever
 you want in as few clicks or taps as possible.
 
+** Technical todos
+*** TODO Run frontend in non-development mode
+    On Heroku, the frontend is running in development mode
+*** TODO Use OAuth for authentication
+    Currently the app stores encrypted user passwords in its database.
 
+    While that's better than unencrypted, it still means if someone
+    gains access to the database, they would get the ability to try
+    and crack a user's password that they may use for other services.
+
+    This app should not store passwords, if possible.
+*** TODO Allow two decimal places in weight
+    What it says: store up to two decimal places when saving weight.
 ** Ready to implement
 
    Ideas here are considered good and should be done soon.
@@ -62,6 +74,8 @@ is inconsistent, it should suggest they try to make it more stable,
 and also advise them to weigh themselves in the morning, to get the
 best results.
 
+*** Email notify if weight entries missed for a few days
+    If, say, four days go by without an entry, send an email reminder.
 *** Integrate with digital scales
 
 How sick would it be if you just hopped on the scale and it recorded
