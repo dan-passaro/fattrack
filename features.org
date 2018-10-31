@@ -31,6 +31,27 @@ you want in as few clicks or taps as possible.
     This app should not store passwords, if possible.
 *** TODO Allow two decimal places in weight
     What it says: store up to two decimal places when saving weight.
+*** TODO Migrate off sass gem
+    See the post-install message:
+
+       Ruby Sass is deprecated and will be unmaintained as of 26 March 2019.
+
+       * If you use Sass as a command-line tool, we recommend using Dart Sass, the new
+         primary implementation: https://sass-lang.com/install
+
+       * If you use Sass as a plug-in for a Ruby web framework, we recommend using the
+         sassc gem: https://github.com/sass/sassc-ruby#readme
+
+       * For more details, please refer to the Sass blog:
+         http://sass.logdown.com/posts/7081811
+*** TODO Upgrade Heroku stafk
+    Build message:
+
+ !   Warning: You are running on a deprecated stack.
+ !   Please upgrade to the latest stack by following the instructions on:
+ !   https://devcenter.heroku.com/articles/upgrading-to-the-latest-stack
+
+
 ** Ready to implement
 
    Ideas here are considered good and should be done soon.
