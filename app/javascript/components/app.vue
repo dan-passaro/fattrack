@@ -14,7 +14,11 @@
                 <input
                   class="form-control"
                   ref="input"
-                  type="number"
+
+                  type="tel"
+                  pattern="[0-9]*"
+                  novalidate
+
                   v-model="entry.value"
                   @blur="cancelEdit"
                 >
