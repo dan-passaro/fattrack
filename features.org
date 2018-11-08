@@ -50,7 +50,24 @@ you want in as few clicks or taps as possible.
  !   Warning: You are running on a deprecated stack.
  !   Please upgrade to the latest stack by following the instructions on:
  !   https://devcenter.heroku.com/articles/upgrading-to-the-latest-stack
+*** TODO Fix 'submit' button on main page
 
+    Clicking the submit button de-focuses the input widget, which
+    causes the form to reset.
+*** TODO Fix old entries editing on mobile
+
+    None of the edit/delete hover links appear on mobile because they
+    only appear on mouse hover.
+*** TODO Make mobile viewport more fixed
+
+    The mobile viewport can be scrolled left and right, but that
+    doesn't tend to be useful.  It should be possible to 'lock' the
+    page so users can't accidentally scroll relevant stuff off-screen
+
+*** TODO Make mobile entry use keypad
+
+    When entering a weight on mobile, the full text keyboard comes up.
+    It should just be a number pad.
 
 ** Ready to implement
 

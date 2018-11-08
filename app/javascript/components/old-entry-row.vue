@@ -10,6 +10,7 @@
           <div class="col-xs-4">
             <input
               ref="input"
+              type="number"
               v-model="entry.value"
               @blur="stopEditing"
               class="form-control"
