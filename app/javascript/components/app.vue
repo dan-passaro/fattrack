@@ -16,7 +16,7 @@
                   ref="input"
 
                   type="tel"
-                  pattern="[0-9]*"
+                  pattern="^\d+(\.\d{1,1})?$"
                   novalidate
 
                   v-model="entry.value"
